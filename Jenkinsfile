@@ -12,11 +12,10 @@ pipeline {
       stage('Clone') {
          steps {
             cleanWs()
-            git 'https://github.com/jeromedecoster/aaa.git'
             slackSend color: 'good', message: 'Starting *API Testing* Job'
             sh '''
             git clone ${GIT_URL} project
-            cd aaa
+            cd project
             git branch develop
             '''
          }
