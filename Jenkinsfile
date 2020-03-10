@@ -15,7 +15,7 @@ pipeline {
             git 'https://github.com/jeromedecoster/aaa.git'
             slackSend color: 'good', message: 'Starting *API Testing* Job'
             sh '''
-            # git clone ${GIT_URL} project
+            git clone ${GIT_URL} project
             cd aaa
             git branch develop
             '''
